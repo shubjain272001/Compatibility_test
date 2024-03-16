@@ -11,19 +11,23 @@ class BasicContainer extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/images/quiz-logo.png', height: 300, width: 400),
+          Image.asset('assets/images/quiz-logo.png',
+           height: 300, width: 400,
+           color: const Color.fromARGB(80, 255, 255, 255),),
           const Padding(padding: EdgeInsets.only(top: 80)),
           const Text('Lets check our Compatibility',
               style: TextStyle(fontSize: 24, color: Colors.white)),
           const Padding(padding: EdgeInsets.only(top: 30)),
-          OutlinedButton(
+          OutlinedButton.icon(
             onPressed: () {},
             style: OutlinedButton.styleFrom(
-              foregroundColor: const Color.fromARGB(255, 67, 5, 78),
+              foregroundColor: Color.fromARGB(255, 255, 255, 255),
             ),
-            child: const Text(
+           icon: const Icon(Icons.arrow_right_alt),
+            label: const Text(
+              
               'Start Quiz',
-              style: TextStyle(fontSize: 15, color: Colors.white),
+              style: TextStyle(fontSize: 15,),
             ),
           )
         ],
