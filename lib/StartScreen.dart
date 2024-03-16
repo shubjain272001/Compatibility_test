@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class BasicContainer extends StatelessWidget {
-  BasicContainer({super.key});
+class StartScreen extends StatelessWidget {
+  StartScreen({super.key});
 
   @override
   Widget build(context) {
