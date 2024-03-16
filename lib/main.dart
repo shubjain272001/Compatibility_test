@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:compatibilty_test/questions.dart';
-import 'package:compatibilty_test/quiz.dart';
+import 'package:compatibilty_test/Questions.dart';
+import 'package:compatibilty_test/Quiz.dart';
 
 void  main() {
   runApp(
-    const quiz()
+    const Quiz()
   );
 }
