@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:compatibilty_quiz/BasicContainer.dart';
-
+import 'package:compatibilty_test/questions.dart';
+import 'package:compatibilty_test/quiz.dart';
 
 void  main() {
   runApp(
-    MaterialApp(
-     home: Scaffold(
-      backgroundColor:  const Color.fromARGB(255, 74, 3, 87),
-      body:  BasicContainer() 
-      ),
-      ),
+    const quiz()
   );
 }
