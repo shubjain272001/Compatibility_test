@@ -2,7 +2,6 @@ import 'package:compatibilty_test/Models/Questions_define.dart';
 import 'package:compatibilty_test/Questions_screen.dart';
 
  const questions =[
-
  question('Which Weather season you love ?',
   [
    'Winter',
@@ -11,7 +10,6 @@ import 'package:compatibilty_test/Questions_screen.dart';
    'Rainy',
   ],
  ),
-
  question('what will you prefer ?',
   [
    'Mountains',
@@ -20,7 +18,6 @@ import 'package:compatibilty_test/Questions_screen.dart';
    'Desert',
   ],
  ),
-
   question('Which quality you think suits you most?',
   [
    'Cool',
@@ -29,7 +26,6 @@ import 'package:compatibilty_test/Questions_screen.dart';
    'Cool',
   ],
  ),
-
  question('best Singer between them?',
   [
    'Arijit Singh',
@@ -38,5 +34,4 @@ import 'package:compatibilty_test/Questions_screen.dart';
    'Honey Singh',
   ],
  ),
-
 ];

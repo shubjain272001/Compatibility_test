@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  StartScreen( this.startQuiz,{super.key});
+  StartScreen(this.startQuiz, {super.key});
 
- final void Function() startQuiz  ;
+  final void Function() startQuiz;
 
   @override
   Widget build(context) {
@@ -13,9 +13,12 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/images/quiz-logo.png',
-           height: 300, width: 400,
-           color: const Color.fromARGB(80, 255, 255, 255),),
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            height: 300,
+            width: 400,
+            color: const Color.fromARGB(80, 255, 255, 255),
+          ),
           const Padding(padding: EdgeInsets.only(top: 80)),
           const Text('Lets check our Compatibility',
               style: TextStyle(fontSize: 24, color: Colors.white)),
@@ -23,16 +26,16 @@ class StartScreen extends StatelessWidget {
           OutlinedButton.icon(
             onPressed: () {
               startQuiz();
-
             },
             style: OutlinedButton.styleFrom(
-              foregroundColor: Color.fromARGB(255, 255, 255, 255),
+              foregroundColor: const Color.fromARGB(255, 255, 255, 255),
             ),
-           icon: const Icon(Icons.arrow_right_alt),
+            icon: const Icon(Icons.arrow_right_alt),
             label: const Text(
-              
               'Start Quiz',
-              style: TextStyle(fontSize: 15,),
+              style: TextStyle(
+                fontSize: 15,
+              ),
             ),
           )
         ],

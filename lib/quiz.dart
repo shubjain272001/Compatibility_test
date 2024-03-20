@@ -3,7 +3,7 @@ import 'package:compatibilty_test/StartScreen.dart';
 import 'package:compatibilty_test/Questions_screen.dart';
 import 'package:flutter/widgets.dart';
 
-class  Quiz extends StatefulWidget {
+class Quiz extends StatefulWidget {
   const Quiz({super.key});
 
   @override
@@ -11,27 +11,28 @@ class  Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-    var activeScreen ='start-screen';
-   
-  void SwitchScreen(){
+
+  final List<String> selected_answers = [];
+  var activeScreen = 'start-screen';
+
+  void SwitchScreen() {
     setState(() {
       activeScreen = 'questions-screen';
     });
-    
   }
-  
-  
+
+ void chooseAnswer(String answer){
+   selected_answers.add(answer);
+ }
   @override
-
-  Widget build( context) {
-
-    
+  Widget build(context) {
     return MaterialApp(
-     home: Scaffold(
-      backgroundColor:  Color.fromARGB(255, 126, 36, 171),
-      body:  activeScreen == 'start-screen'?StartScreen(SwitchScreen) : const Questions() ,
+      home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 126, 36, 171),
+        body: activeScreen == 'start-screen'
+            ? StartScreen(SwitchScreen)
+            :  Questions( OnselectAnswer: chooseAnswer),
       ),
-      );
+    );
   }
 }
-
