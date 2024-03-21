@@ -2,7 +2,9 @@
  
  
  class Result_screen extends StatelessWidget {
-  const Result_screen({super.key});
+  const Result_screen({super.key, required this.ResultAnswer});
+
+  final List<String> ResultAnswer ;
 
   @override
   Widget build(BuildContext context) {
