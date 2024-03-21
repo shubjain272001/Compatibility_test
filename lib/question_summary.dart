@@ -11,7 +11,7 @@ class question_summary extends StatelessWidget {
   Widget build(BuildContext context) {
     return
        SizedBox(
-        height: 300,
+        height: 250,
         child: SingleChildScrollView(
           child: Column(
             children: 
@@ -23,9 +23,9 @@ class question_summary extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(data['question'].toString()),
-                          SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           Text( 'Shubham Answer = ${data['correct_answer']}'),
-                            SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           Text('your Answer = ${data['user_answer']}'),
                         ],
                       ),
