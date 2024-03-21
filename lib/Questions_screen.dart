@@ -15,7 +15,6 @@ class _QuestionsState extends State<Questions> {
   var currentquestion = 0;
 
   void current_question_no(String selected_answer) {
-
     widget.OnselectAnswer(selected_answer);
       setState(() {
         currentquestion++;

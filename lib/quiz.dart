@@ -1,7 +1,11 @@
+import 'package:compatibilty_test/Models/Questions_define.dart';
+import 'package:compatibilty_test/data/Questions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:compatibilty_test/StartScreen.dart';
 import 'package:compatibilty_test/Questions_screen.dart';
 import 'package:flutter/widgets.dart';
+import  'package:compatibilty_test/Result_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -12,26 +16,47 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
 
-  final List<String> selected_answers = [];
+   List<String> selected_answers = [];
   var activeScreen = 'start-screen';
 
   void SwitchScreen() {
     setState(() {
       activeScreen = 'questions-screen';
+     
     });
   }
 
  void chooseAnswer(String answer){
    selected_answers.add(answer);
+
+   if(selected_answers.length==questions.length){
+        setState(() {
+           activeScreen ='result-screen';
+        selected_answers =[];
+        });
+       
+      }
+      
  }
   @override
   Widget build(context) {
-    return MaterialApp(
+
+    Widget ScreenWidget = StartScreen(SwitchScreen);
+
+    if(activeScreen == 'questions-screen'){
+      ScreenWidget = Questions(OnselectAnswer: chooseAnswer,);
+    }
+
+    if(activeScreen =='result-screen'){
+      ScreenWidget =const Result_screen();
+    }
+
+    return  MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 126, 36, 171),
-        body: activeScreen == 'start-screen'
-            ? StartScreen(SwitchScreen)
-            :  Questions( OnselectAnswer: chooseAnswer),
+        backgroundColor:const Color.fromARGB(255, 126, 36, 171),
+        body: Container(
+          child: ScreenWidget,
+        )
       ),
     );
   }
