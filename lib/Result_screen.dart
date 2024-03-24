@@ -37,7 +37,7 @@ import 'package:google_fonts/google_fonts.dart';
      final Summary_data =GetValues();
       var total_questions =questions.length  ;
       var no_of_correct_questions= Summary_data.where( (data){
-        return (data['correct_answer']==data['user_answer']);
+        return data['correct_answer']==data['user_answer'];
       }).length;
       
 
@@ -56,14 +56,12 @@ import 'package:google_fonts/google_fonts.dart';
                   
                 ),
                const SizedBox(height: 30,),
-               question_summary(GetValues()),
+               question_summary(Summary_data),
                 const SizedBox(height: 30,),
 
                 TextButton.icon(onPressed: restart_button,
                 
-                style: TextButton.styleFrom(backgroundColor: Color.fromARGB(255, 4, 46, 82)),
-
-
+                style: TextButton.styleFrom(backgroundColor:const Color.fromARGB(255, 4, 46, 82)),
                 icon: const Icon(Icons.replay_outlined),
                 label: const Text( 'Restart Quiz', style: TextStyle(
                 fontSize: 15,

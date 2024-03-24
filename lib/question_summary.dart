@@ -21,20 +21,19 @@ class question_summary extends StatelessWidget {
                 return  Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text( ((data['question_no'] as int) + 1).toString() ,style: TextStyle(color :Colors.white),  ),
+                    Text( ((data['question_no'] as int) + 1).toString() ,style: const TextStyle(color :Colors.white),  ),
                     Expanded(
                       child: Column(
                         children: [
                           Text(data['question'].toString(),style: const TextStyle(color:Colors.white ,fontSize: 16, fontWeight: FontWeight.w400),),
                           const SizedBox(height: 2,),
-                          Text( 'Shubham Answer = ${data['correct_answer']}',style: TextStyle(color: Color.fromARGB(255, 232, 232, 9)),),
+                          Text( 'Shubham Answer = ${data['correct_answer']}',style: const TextStyle(color: Color.fromARGB(255, 232, 232, 9)),),
                           const SizedBox(height: 2,),
                           Text('your Answer = ${data['user_answer']}' ,style: const TextStyle(color:Color.fromARGB(255, 241, 7, 175))),
                            const SizedBox(height: 5,),
                         ],
                       ),
-                    )
-                    
+                    ), 
                   ],
                 );
               }
